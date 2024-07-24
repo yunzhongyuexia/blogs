@@ -64,5 +64,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-           cd /www/wwwroot/www.yzyx.fun
+           cd /www/wwwroot/www.yzyx.fun/dist
            git pull origin gh-pages  # 拉取最新的代码

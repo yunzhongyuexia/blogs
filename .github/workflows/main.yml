@@ -39,10 +39,11 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run docs:build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      
+      - name: 部署文档到 GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          branch: gh-pages
+          folder: ./dist
           # 如果你想让 gh-pages 分支成为一个孤立的分支，可以添加以下选项
           # force_orphan: true

@@ -1,23 +1,30 @@
-name: 打包项目
-on: push
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 触发部署的分支，根据你的主分支名称进行修改
 
 jobs:
-    npm-build:
-        name: npm-build工作
-        runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        steps:
-        - name: 读取仓库内容
-          uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16' # 根据项目需求设置 Node.js 版本
 
-        - name: 安装依赖和项目打包
-          run: 
-            npm install
-            npm run build
+      - name: Install Dependencies
+        run: npm install
 
-        - name: 部署
-          uses: JamesIves/github-pages-deploy-action@v4
-          with: 
-            branch: main
-            folder: dist
+      - name: Build
+        run: npm run build # 确保 package.json 中有 "build" 脚本
 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # 你的构建输出目录

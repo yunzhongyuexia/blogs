@@ -13,7 +13,7 @@ jobs:
         - name: 安装依赖和项目打包
           run: 
             npm install
-            npm run docs-build
+            npm run build
 
         - name: 部署
           uses: JamesIves/github-pages-deploy-action@v4

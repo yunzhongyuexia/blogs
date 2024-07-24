@@ -47,3 +47,22 @@ jobs:
           folder: dist
           # 如果你想让 gh-pages 分支成为一个孤立的分支，可以添加以下选项
           # force_orphan: true
+
+      - name: 设置 SSH 环境
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H yzyx.fun >> ~/.ssh/known_hosts
+          echo "Host yzyx.fun
+          StrictHostKeyChecking no" >> ~/.ssh/config
+      - name: 部署到服务器
+        uses: appleboy/ssh-action@master
+        with:
+          host: yzyx.fun 
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+           cd /www/wwwroot/www.yzyx.fun
+           git pull origin gh-pages  # 拉取最新的代码

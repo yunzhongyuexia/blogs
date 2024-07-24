@@ -1,0 +1,30 @@
+#navbar {
+    background-color: transparent !important;
+    
+  }
+
+.vp-blog-hero-image{
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  }
+    
+.vp-nav-logo{
+    border-radius: 50% !important;
+    overflow: hidden !important;
+  }
+
+.vp-blogger-avatar {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+// .vp-blog-mask {
+//   background: url('/assets/images/1.mp4') center center fixed !important;
+//   background-size: cover !important;
+// }
+
+.vp-article-cover {
+  // width: 100%; /* 宽度为容器宽度 */
+  max-height: 250px; /* 最大高度为 300px */
+  object-fit: cover; /* 保持图片比例 */
+}

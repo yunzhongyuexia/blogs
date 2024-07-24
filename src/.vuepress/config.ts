@@ -10,6 +10,7 @@ const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   base: "/",
+  dest: 'dist',
   lang: "zh-CN",
   title: "云中月下之镜",
   theme,

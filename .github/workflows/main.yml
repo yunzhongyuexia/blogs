@@ -44,6 +44,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: ./dist
+          folder: dist
           # 如果你想让 gh-pages 分支成为一个孤立的分支，可以添加以下选项
           # force_orphan: true

@@ -1,31 +1,48 @@
-name: Deploy to GitHub Pages
+name: 部署文档
 
 on:
   push:
     branches:
-      - main # 触发部署的分支，根据你的主分支名称进行修改
+      - main
+
+permissions:
+  contents: write
 
 jobs:
-  deploy:
+  deploy-gh-pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/checkout@v3
         with:
-          node-version: '20' # 根据项目需求设置 Node.js 版本
+          fetch-depth: 0
+          submodules: false  # 如果不使用子模块，这里设置为 false
 
-      - name: Install Dependencies
-        run: npm install
+      - name: 设置 pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
-      - name: Build
-        run: npm run build # 确保 package.json 中有 "build" 脚本
+      - name: 设置 Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: 安装依赖
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - name: 构建文档
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm run docs:build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          force_orphan: true # 添加这行来创建孤立的 gh-pages 分支
+          # 如果你想让 gh-pages 分支成为一个孤立的分支，可以添加以下选项
+          # force_orphan: true

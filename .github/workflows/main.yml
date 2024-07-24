@@ -15,9 +15,12 @@ jobs:
             npm install
             npm run build
 
+        - name: Check dist directory
+          run: ls -la .vuepress/dist
+
         - name: 部署
           uses: JamesIves/github-pages-deploy-action@v4
           with: 
             branch: main
-            folder: .vuepress/dist
+            folder: dist
 

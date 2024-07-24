@@ -19,5 +19,5 @@ jobs:
           uses: JamesIves/github-pages-deploy-action@v4
           with: 
             branch: main
-            folder:  blogs/src/.vuepress/dist
+            folder:  src/.vuepress/dist
 

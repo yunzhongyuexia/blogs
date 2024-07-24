@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '16' # 根据项目需求设置 Node.js 版本
+          node-version: '20' # 根据项目需求设置 Node.js 版本
 
       - name: Install Dependencies
         run: npm install

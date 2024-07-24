@@ -11,8 +11,7 @@ const __dirname = getDirname(import.meta.url);
 export default defineUserConfig({
   base: "/",
   lang: "zh-CN",
-  title: "少年，你渴望力量吗？",
-  description: "vuepress-theme-hope 的博客演示",
+  title: "云中月下之镜",
   theme,
   plugins: [
     copyrightPlugin({

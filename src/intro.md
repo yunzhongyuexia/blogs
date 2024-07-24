@@ -1,8 +1,9 @@
 ---
 icon: circle-info
-cover: /assets/images/8.jpg
+cover: /assets/images/1.jpg
 date: 2024-07-11
 star: true
+sticky: true
 ---
 # 个人介绍
 

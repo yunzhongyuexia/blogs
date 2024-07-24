@@ -3,7 +3,7 @@ icon: home
 title: 首页
 home: true
 layout: BlogHome
-heroImage: /assets/images/1.png
-heroText: 少年，我看你骨骼惊奇！
+heroImage: /assets/images/t1.jpg
+heroText: 风起于青萍之末，浪成于微澜之间
 heroFullScreen: true
 ---

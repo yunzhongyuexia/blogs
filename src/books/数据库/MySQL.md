@@ -1,6 +1,6 @@
 ---
 title: MySQL
-cover: /assets/images/5.jpg
+cover: /assets/images/18.jpg
 date: 2024-06-01
 category:
   - 数据库

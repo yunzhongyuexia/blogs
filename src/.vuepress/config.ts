@@ -9,7 +9,7 @@ import { getDirname, path } from "vuepress/utils";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  base: "/blog/",
+  base: "/blogs/",
   lang: "zh-CN",
   title: "少年，你渴望力量吗？",
   description: "vuepress-theme-hope 的博客演示",

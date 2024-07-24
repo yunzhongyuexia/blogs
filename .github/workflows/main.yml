@@ -27,4 +27,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # 你的构建输出目录
+          publish_dir: ./dist
+          force_orphan: true # 添加这行来创建孤立的 gh-pages 分支

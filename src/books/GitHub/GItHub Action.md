@@ -1,5 +1,5 @@
 ---
-title: GitHub Action工作流自动化部署
+title: GitHub Actions工作流自动化部署
 cover: /assets/images/15.jpg
 date: 2024-07-25
 category:
@@ -63,17 +63,17 @@ jobs:
           git pull origin gh-pages # 拉取最新代码
 ```
 
-代码仓库--》Actions--》Now workflow--》Publish Node.js Package to GitHub Packages(第二行中间)
+代码仓库-->Actions-->Now workflow-->Publish Node.js Package to GitHub Packages(第二行中间)
 
 然后你的项目就会出现这个脚本文件，并对脚本文件进行细节上的修改。
 
-![image-20240725171622658](\assets\image-20240725171622658.png)
+![workflow](\assets\image-20240725171622658.png)
 
 ### 2. 设置环境
 
 - TOKEN
 
-​	Setting（GitHub）--》Developer setting（左侧边栏最下面）--》Token（classic）记得记录一下
+​	Setting（GitHub）-->Developer setting（左侧边栏最下面）-->Token（classic）记得记录一下
 
 ​	长这样：ghp_gZGZzXVwmLPYn6aBCt4O6ZZ9Fh42eSop3（我随机删了两个字符）
 
@@ -89,11 +89,11 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 ​	公钥添加到GitHub的SSH keys中,私钥添加到下面的secrets中
 
-![image-20240725171228632](\assets\image-20240725171228632.png)
+![SSH keys](\assets\image-20240725171228632.png)
 
 - 添加到secrets
 
-​	Setting（代码仓库）--》Secrets and variables--》Actions--》New repository secret（Name字符都要大写）
+​	Setting（代码仓库）-->Secrets and variables-->Actions-->New repository secret（Name字符都要大写）
 
 |          Name           |                   内容                    |
 | :---------------------: | :---------------------------------------: |
@@ -103,17 +103,17 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 | secrets.SSH_PRIVATE_KEY |                  ssh私钥                  |
 |      secrets.PORT       |                    22                     |
 
-![image-20240725171552804](\assets\image-20240725171552804.png)
+![Secrets](\assets\image-20240725171552804.png)
 
 ### 3. 整体思想
 
 ​	设计一个脚本来实现项目的自动化部署，本地将项目push到GitHub仓库时，push会触发这个脚本，GitHub会开启一个ubuntu的服务器，来处理我们这个脚本，执行pnpm run docs:build打包我们的项目生成dist文件，再将这个dist文件存放在我们GitHub仓库的另一个分支gh-pages上。然后在服务器的/www/wwwroot/www.yzyx.fun/blogs目录上执行git pull origin gh-pages拉取gh-pages分支上的最新代码，最后部署到我们的服务器上。
 
-![image-20240725183051071](\assets\image-20240725183051071.png)
+![blogs](\assets\image-20240725183051071.png)
 
-![image-20240725183104336](\assets\image-20240725183104336.png)
+![main](\assets\image-20240725183104336.png)
 
-![image-20240725183124075](\assets\image-20240725183124075.png)
+![gh-pages](\assets\image-20240725183124075.png)
 
 
 

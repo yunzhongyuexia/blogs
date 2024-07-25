@@ -25,9 +25,9 @@ export default defineUserConfig({
     commentPlugin({
       provider: 'Giscus',
       repo:"yunzhongyuexia/blogs",
-      repoId:"R_kgDOMN1SAw",
+      repoId:"R_kgDOMaVDlg",
       category:"Announcements",
-      categoryId:"DIC_kwDOMN1SA84CgXFw",
+      categoryId:"DIC_kwDOMaVDls4ChKHq",
       comment:true,
     }),
   ],

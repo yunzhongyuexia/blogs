@@ -56,12 +56,6 @@ jobs:
           ssh-keyscan -H yzyx.fun >> ~/.ssh/known_hosts
           echo "Host yzyx.fun
           StrictHostKeyChecking no" >> ~/.ssh/config
-          
-      - name: Set SSH key file permissions
-        run: chmod 600 /home/runner/.ssh/id_rsa
-
-      - name: 测试 SSH 连接
-        run: ssh -T git@github.com
 
       - name: 部署到服务器
         uses: appleboy/ssh-action@master

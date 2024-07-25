@@ -42,5 +42,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          cd /www/wwwroot/www.yzyx.fun  # 替换为您的项目在服务器上的位置
+          cd /www/wwwroot/www.yzyx.fun/blogs  # 替换为您的项目在服务器上的位置
           git pull origin gh-pages # 拉取最新代码

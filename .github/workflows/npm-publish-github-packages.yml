@@ -12,23 +12,29 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v4
 
-    - name: Setup Node.js
+    - name: Setup Node.js and pnpm
       uses: actions/setup-node@v3
       with:
-        node-version: '17'  # 根据项目需求设置 Node.js 版本
+        node-version: '17'
+        cache: 'pnpm'
 
-    - name: Install dependencies
-      run: npm install
+    - name: Install pnpm
+      run: npm install -g pnpm
+
+    - name: Clean and reinstall dependencies
+      run: |
+        rm -rf node_modules
+        pnpm install
 
     - name: Build project
-      run: npm run docs:build  # 确保 package.json 中有 "build" 脚本
-    
+      run: pnpm run docs:build  # 确保 package.json 中有 "build" 脚本
+
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages
         folder: dist
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.TOKEN }}
 
     - name: Deploy to server
       uses: appleboy/ssh-action@master
@@ -40,4 +46,3 @@ jobs:
         script: |
           cd /www/wwwroot/www.yzyx.fun # 替换为您的项目在服务器上的位置
           git pull origin gh-pages  # 拉取最新代码，您可以根据需要更改分支名
-        

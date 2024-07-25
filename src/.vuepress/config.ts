@@ -18,8 +18,8 @@ export default defineUserConfig({
     copyrightPlugin({
       global: true,
       triggerLength:10,
-      disableCopy:true,
-      disableSelection:true,
+      disableCopy:false,
+      disableSelection:false,
       author:"yunzhongyue"
     }),
     commentPlugin({

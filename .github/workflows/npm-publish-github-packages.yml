@@ -10,27 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout source code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
-    - name: Setup Node.js and pnpm
+    - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
-        cache: 'pnpm'
+        node-version: '18'  # 或者您项目需要的 Node.js 版本
 
     - name: Install pnpm
       run: npm install -g pnpm
 
-    - name: Clean and reinstall dependencies
-      run: |
-        rm -rf node_modules
-        pnpm install
+    - name: Install dependencies
+      run: pnpm install
 
     - name: Build project
-      run: pnpm run docs:build  # 确保 package.json 中有 "build" 脚本
+      run: pnpm run docs:build  # 确保 package.json 中有 "docs:build" 脚本
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
+      if: ${{ github.ref == 'refs/heads/main' }}
       with:
         branch: gh-pages
         folder: dist
@@ -44,5 +42,6 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          cd /www/wwwroot/www.yzyx.fun # 替换为您的项目在服务器上的位置
-          git pull origin gh-pages  # 拉取最新代码，您可以根据需要更改分支名
+          cd /www/wwwroot/www.yzyx.fun  # 替换为您的项目在服务器上的位置
+          git checkout gh-pages  # 确保服务器上的仓库正确检出 gh-pages 分支
+          git pull  # 拉取最新代码

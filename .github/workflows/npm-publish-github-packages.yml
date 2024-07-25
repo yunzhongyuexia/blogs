@@ -43,5 +43,4 @@ jobs:
         port: 22
         script: |
           cd /www/wwwroot/www.yzyx.fun  # 替换为您的项目在服务器上的位置
-          git checkout gh-pages  # 确保服务器上的仓库正确检出 gh-pages 分支
-          git pull  # 拉取最新代码
+          git pull origin gh-pages # 拉取最新代码

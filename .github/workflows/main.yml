@@ -56,6 +56,10 @@ jobs:
           ssh-keyscan -H yzyx.fun >> ~/.ssh/known_hosts
           echo "Host yzyx.fun
           StrictHostKeyChecking no" >> ~/.ssh/config
+          
+      - name: 测试 SSH 连接
+        run: ssh -T git@github.com
+
       - name: 部署到服务器
         uses: appleboy/ssh-action@master
         with:

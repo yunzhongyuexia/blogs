@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@vuepress-denaro/vuepress-plugin-reward": "^1.3.1",
-    "vuepress-plugin-player": "^1.1.8"
+    "vuepress-plugin-player": "^1.1.8",
+    "vuepress-plugin-ribbon": "^1.1.6"
   }
 }

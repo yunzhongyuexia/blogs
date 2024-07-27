@@ -9,6 +9,8 @@ import { getDirname, path } from "vuepress/utils";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
+  host: "localhost",
+  port: 8099,
   base: "/",
   dest: 'dist',
   lang: "zh-CN",

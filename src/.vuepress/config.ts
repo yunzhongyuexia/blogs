@@ -23,7 +23,7 @@ export default defineUserConfig({
       triggerLength:10,
       disableCopy:false,
       disableSelection:false,
-      author:"yunzhongyuexia"
+      author:"云中月下"
     }),
     commentPlugin({
       provider: 'Giscus',

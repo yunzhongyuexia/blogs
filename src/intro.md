@@ -1,6 +1,6 @@
 ---
 icon: circle-info
-cover: /assets/images/1.jpg
+cover: http://upyun.yzyx.fun/26.jpg
 date: 2024-07-11
 star: true
 sticky: true

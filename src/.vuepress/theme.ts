@@ -9,9 +9,9 @@ export default hopeTheme({
       name: "云中月下",
       url: "http://yzyx.fun/intro.html",
     },
-    favicon: "/assets/images/t1.jpg",
+    favicon: "http://upyun.yzyx.fun/t1.jpg",
     iconAssets: "fontawesome-with-brands",
-    logo: "/assets/images/t1.jpg",
+    logo: "http://upyun.yzyx.fun/t1.jpg",
     repo: "https://github.com/yunzhongyuexia/blogs",
     docsDir: "src",
     // 导航栏

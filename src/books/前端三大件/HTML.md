@@ -1,6 +1,6 @@
 ---
 title: HTML
-cover: /assets/images/13.jpg
+cover: http://upyun.yzyx.fun/13.jpg
 order: 1
 date: 2024-06-01
 category:

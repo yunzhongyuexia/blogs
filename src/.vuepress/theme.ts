@@ -9,9 +9,9 @@ export default hopeTheme({
       name: "云中月下",
       url: "http://yzyx.fun/intro.html",
     },
-    favicon: "http://upyun.yzyx.fun/t1.jpg",
+    favicon: "https://upyun.yzyx.fun/t1.jpg",
     iconAssets: "fontawesome-with-brands",
-    logo: "http://upyun.yzyx.fun/t1.jpg",
+    logo: "https://upyun.yzyx.fun/t1.jpg",
     repo: "https://github.com/yunzhongyuexia/blogs",
     docsDir: "src",
     // 导航栏
@@ -25,7 +25,7 @@ export default hopeTheme({
 
     // 博客相关
     blog: {
-      avatar:"/assets/images/t1.jpg",
+      avatar:"https://upyun.yzyx.fun/t1.jpg",
       name: "云中月下",
       intro: "/intro.html",
       description: "资深二次程序元宅男~",

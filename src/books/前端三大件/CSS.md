@@ -1,6 +1,6 @@
 ---
 title: CSS
-cover: http://upyun.yzyx.fun/3.jpg
+cover: https://upyun.yzyx.fun/3.jpg
 order: 2
 date: 2024-06-01
 category:

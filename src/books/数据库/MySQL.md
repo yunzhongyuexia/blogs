@@ -1,6 +1,6 @@
 ---
 title: MySQL
-cover: https://upyun.yzyx.fun/18.jpg
+cover: https://upyun.yzyx.fun/11.jpg
 date: 2024-06-01
 category:
   - 数据库

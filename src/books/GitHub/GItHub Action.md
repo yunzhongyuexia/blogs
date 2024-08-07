@@ -1,6 +1,6 @@
 ---
 title: GitHub Actions工作流自动化部署
-cover: https://upyun.yzyx.fun/15.jpg
+cover: https://upyun.yzyx.fun/12.jpg
 date: 2024-07-25
 category:
   - GitHub

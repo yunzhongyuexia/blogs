@@ -1,5 +1,5 @@
 ---
-cover: https://upyun.yzyx.fun/9.jpg
+cover: https://upyun.yzyx.fun/14.jpg
 date: 2024-07-11
 category:
   - Go语言基础

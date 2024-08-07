@@ -1,6 +1,6 @@
 ---
 title: JavaScript
-cover: https://upyun.yzyx.fun/2.jpg
+cover: https://upyun.yzyx.fun/6.jpg
 order: 3
 date: 2024-06-01
 category:

@@ -7,7 +7,7 @@ export default hopeTheme({
     darkmode:"switch",
     author: {
       name: "云中月下",
-      url: "http://yzyx.fun/intro.html",
+      url: "https://www.yzyx.fun/intro.html",
     },
     favicon: "https://upyun.yzyx.fun/t1.jpg",
     iconAssets: "fontawesome-with-brands",
@@ -27,7 +27,7 @@ export default hopeTheme({
     blog: {
       avatar:"https://upyun.yzyx.fun/t1.jpg",
       name: "云中月下",
-      intro: "/intro.html",
+      intro: "https://www.yzyx.fun/intro.html",
       description: "资深二次程序元宅男~",
       medias: {
         GitHub: "https://github.com/yunzhongyuexia",
